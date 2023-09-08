@@ -1,6 +1,6 @@
 {
-	"name": "geopattern",
-	"version": "1.2.4",
+	"name": "@victr/geopattern",
+	"version": "1.2.5",
 	"description": "Generate beautiful SVG patterns",
 	"keywords": [
 		"svg",
@@ -20,7 +20,7 @@
 		"README.md"
 	],
 	"type": "module",
-	"exports": "./dist/index.esm.js",
+	"exports": "./dist/geopattern.esm.js",
 	"scripts": {
 		"test": "mocha tests",
 		"build": "node ./build.config.js"
