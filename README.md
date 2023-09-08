@@ -1,4 +1,4 @@
-
+![npm (scoped)](https://img.shields.io/npm/v/%40victr/geopattern?style=flat-square&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40victr%2Fgeopattern)
 
 # GeoPattern
 
@@ -15,7 +15,7 @@ This branch is a modernization attempt of [btmills/geopattern](https://github.co
 Use the `GeoPattern` browser global
 
 ```js
-const pattern = GeoPattern.generate('GitHub');
+const pattern = GeoPattern.generate('GitHub')
 document.getElementById('geopattern').style.backgroundImage = pattern.toDataUrl()
 ```
 
@@ -30,18 +30,17 @@ After requiring `geopattern`, the API is identical to the browser version
 ```js
 import { generate } from '@victr/geopattern'
 
-const pattern = generate('GitHub');
-pattern.toDataUrl(); // url("data:image/svg+xml;...
+const pattern = generate('GitHub')
+pattern.toDataUrl() // url("data:image/svg+xml;...
 ```
 
-or 
-
+or
 
 ```js
 import * as GeoPattern from '@victr/geopattern'
 
-const pattern = GeoPattern.generate('GitHub');
-pattern.toDataUrl(); // url("data:image/svg+xml;...
+const pattern = GeoPattern.generate('GitHub')
+pattern.toDataUrl() // url("data:image/svg+xml;...
 ```
 
 ### API
@@ -50,13 +49,13 @@ pattern.toDataUrl(); // url("data:image/svg+xml;...
 
 Returns a newly-generated, tiling SVG Pattern.
 
-- `string` Will be hashed using the SHA1 algorithm, and the resulting hash will be used as the seed for generation.
+-   `string` Will be hashed using the SHA1 algorithm, and the resulting hash will be used as the seed for generation.
 
-- `options.color` Specify an exact background color. This is a CSS hexadecimal color value.
+-   `options.color` Specify an exact background color. This is a CSS hexadecimal color value.
 
-- `options.baseColor` Controls the relative background color of the generated image. The color is not identical to that used in the pattern because the hue is rotated by the generator. This is a CSS hexadecimal color value, which defaults to `#933c3c`.
+-   `options.baseColor` Controls the relative background color of the generated image. The color is not identical to that used in the pattern because the hue is rotated by the generator. This is a CSS hexadecimal color value, which defaults to `#933c3c`.
 
-- `options.generator` Determines the pattern. [All of the original patterns](https://github.com/jasonlong/geo_pattern#available-patterns) are available in this port, and their names are camelCased.
+-   `options.generator` Determines the pattern. [All of the original patterns](https://github.com/jasonlong/geo_pattern#available-patterns) are available in this port, and their names are camelCased.
 
 #### Pattern.color
 
@@ -85,10 +84,3 @@ Gets the pattern as a data URL suitable for use as a CSS `background-image`, i.e
 ## License
 
 Licensed under the terms of the MIT License, the full text of which can be read in [LICENSE](LICENSE).
-
-
-[downloads-image]: https://img.shields.io/npm/dm/geopattern.svg?style=flat-square
-[npm-image]: https://img.shields.io/npm/v/geopattern.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/geopattern
-[travis-image]: https://img.shields.io/travis/btmills/geopattern/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/btmills/geopattern
