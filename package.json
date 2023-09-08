@@ -1,6 +1,6 @@
 {
 	"name": "@victr/geopattern",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"description": "Generate beautiful SVG patterns",
 	"keywords": [
 		"svg",
