@@ -1,62 +1,48 @@
+
+
 # GeoPattern
 
-[![npm version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
-[![downloads][downloads-image]][npm-url]
-
-This is a JavaScript port of [jasonlong/geo_pattern](https://github.com/jasonlong/geo_pattern) with a [live preview page](http://btmills.github.io/geopattern/) and is derived from the background generator originally used for [GitHub Guides](http://guides.github.com/).
+This branch is a modernization attempt of [btmills/geopattern](https://github.com/btmills/geopattern), a JavaScript port of [jasonlong/geo_pattern](https://github.com/jasonlong/geo_pattern) with a [live preview page](http://btmills.github.io/geopattern/) and is derived from the background generator originally used for [GitHub Guides](http://guides.github.com/).
 
 ## Usage
 
 ### Web
 
-Include the [minified script](https://github.com/btmills/geopattern/releases/download/v1.2.3/geopattern-1.2.3.min.js) from your server. jQuery is optional.
-
 ```html
-<script src="js/jquery.min.js"></script> <!-- optional -->
-<script src="js/geopattern.min.js"></script>
+<script src="dist/geopattern.min.js"></script>
 ```
 
-Or reference it from a [CDN](https://cdnjs.com/libraries/geopattern).
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script> <!-- optional -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
-```
-
-Use either the `GeoPattern` browser global or the jQuery plugin:
+Use the `GeoPattern` browser global
 
 ```js
-// Use the global...
-var pattern = GeoPattern.generate('GitHub');
-$('#geopattern').css('background-image', pattern.toDataUrl());
-
-// ...or the plugin
-$('#geopattern').geopattern('GitHub');
+const pattern = GeoPattern.generate('GitHub');
+document.getElementById('geopattern').style.backgroundImage = pattern.toDataUrl()
 ```
-
-For backwards compatibility with the script on the [Guides](http://guides.github.com/), the source hash for generation can be supplied with a `data-title-sha` attribute on the element. If the attribute exists, the generator will ignore the input string and use the supplied hash.
-
-To run on Internet Explorer 9, the GeoPattern script requires polyfills for [`window.btoa()`](https://github.com/btmills/geopattern/blob/gh-pages/js/base64.min.js) and [`Uint32Array`](https://github.com/btmills/geopattern/blob/gh-pages/js/typedarray.js).
-
-View [`index.html` on the `gh-pages` branch](https://github.com/btmills/geopattern/blob/gh-pages/index.html) for a complete example.
 
 ### Node.js
 
 ```bash
-npm install geopattern
+npm install @victr/geopattern
 ```
 
-After requiring `geopattern`, the API is identical to the browser version, minus the jQuery plugin.
+After requiring `geopattern`, the API is identical to the browser version
 
 ```js
-var GeoPattern = require('geopattern');
-var pattern = GeoPattern.generate('GitHub');
+import { generate } from '@victr/geopattern'
+
+const pattern = generate('GitHub');
 pattern.toDataUrl(); // url("data:image/svg+xml;...
 ```
 
-PS - If you are going to use **Webpack** (or any other bundler) to bundle `geopattern` and it will be used in a browser, ignore `buffer` shim from the bundling to decrease its size. See [#32](https://github.com/btmills/geopattern/issues/32) for more details. 
+or 
 
+
+```js
+import * as GeoPattern from '@victr/geopattern'
+
+const pattern = GeoPattern.generate('GitHub');
+pattern.toDataUrl(); // url("data:image/svg+xml;...
+```
 
 ### API
 
