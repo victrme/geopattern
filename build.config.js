@@ -2,16 +2,15 @@ import { buildSync } from 'esbuild'
 
 buildSync({
 	entryPoints: ['lib/index.js'],
-	outfile: 'dist/geopattern.cjs.js',
+	outfile: 'dist/cjs/geopattern.cjs.js',
 	format: 'cjs',
 	bundle: true,
 })
 
 buildSync({
-	entryPoints: ['lib/index.js'],
-	outfile: 'dist/geopattern.esm.js',
+	entryPoints: ['lib/**/*.js'],
+	outdir: 'dist/esm',
 	format: 'esm',
-	bundle: true,
 })
 
 buildSync({

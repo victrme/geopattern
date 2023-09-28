@@ -1,6 +1,6 @@
 {
 	"name": "@victr/geopattern",
-	"version": "1.2.8",
+	"version": "1.2.9",
 	"description": "Generate beautiful SVG patterns",
 	"keywords": [
 		"svg",
@@ -23,20 +23,19 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/geopattern.d.ts",
-				"default": "./dist/geopattern.esm.js"
+				"types": "./dist/esm/index.d.ts",
+				"default": "./dist/esm/index.js"
 			},
 			"require": {
-				"default": "./dist/geopattern.cjs.js"
+				"default": "./dist/cjs/index.cjs.js"
 			}
 		}
 	},
-	"main": "./dist/geopattern.cjs.js",
-	"types": "./dist/geopattern.d.ts",
+	"main": "./dist/cjs/index.js",
+	"types": "./dist/esm/index.d.ts",
 	"scripts": {
 		"test": "mocha tests",
-		"build": "node ./build.config.js && npm run types",
-		"types": "npx -p typescript tsc ./dist/geopattern.esm.js --outFile ./dist/geopattern.d.ts --declaration --allowJs --emitDeclarationOnly"
+		"build": "node ./build.config.js && tsc"
 	},
 	"repository": {
 		"type": "git",

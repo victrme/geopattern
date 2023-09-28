@@ -1,6 +1,5 @@
 node_modules
 npm-debug.log
-
-dist/*.esm.js
-dist/*.cjs.js
-dist/*.d.ts
+example
+dist/esm
+dist/cjs
