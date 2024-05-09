@@ -1,6 +1,6 @@
 {
 	"name": "@victr/geopattern",
-	"version": "1.2.9",
+	"version": "1.2.10",
 	"description": "Generate beautiful SVG patterns",
 	"keywords": [
 		"svg",
@@ -42,8 +42,9 @@
 		"url": "https://github.com/victrme/geopattern"
 	},
 	"devDependencies": {
-		"esbuild": "^0.19.2",
-		"mocha": "^10.2.0",
-		"svg-parser": "^2.0.4"
+		"esbuild": "^0.21.1",
+		"mocha": "^10.4.0",
+		"svg-parser": "^2.0.4",
+		"typescript": "^5.4.5"
 	}
 }
